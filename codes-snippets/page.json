@@ -1,0 +1,82 @@
+{
+	// Place your 全局 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Print to console": {
+		"scope": "javascript,typescript",
+		"prefix": "wx-pageTemplate-ES6",
+		"body": [
+	"Page({"
+
+		"/**"
+		" * 页面的初始数据"
+		" */"
+		"data: {"
+		"  "
+		"},"
+	  ""
+		"/**"
+		" * 生命周期函数--监听页面加载"
+		" */"
+		"/**onLoad(options):void {"
+		"  "
+		"},*/"
+	  ""
+		"/**"
+		" * 生命周期函数--监听页面初次渲染完成"
+		" */"
+		"onReady():void {"
+		"  "
+		"},"
+	  ""
+		"/**"
+		" * 生命周期函数--监听页面显示"
+		" */"
+		"onShow():void {"
+		"  "
+		"},"
+	  ""
+		"/**"
+		" * 生命周期函数--监听页面隐藏"
+		" */"
+		"onHide():void {"
+		"  "
+		"},"
+	  ""
+		"/**"
+		" * 生命周期函数--监听页面卸载"
+		" */"
+		"onUnload():void {"
+		"  "
+		"},"
+	  ""
+		"/**"
+		" * 页面相关事件处理函数--监听用户下拉动作"
+		" */"
+		"onPullDownRefresh():void {"
+		"  "
+		"},"
+	  ""
+		"/**"
+		" * 页面上拉触底事件的处理函数"
+		" */"
+		"onReachBottom():void {"
+		"  "
+		"},"
+	  ""
+		"/**"
+		" * 用户点击右上角分享"
+		" */"
+		"onShareAppMessage():Object {"
+		"	return {}  "
+		"}"
+	  "})"
+		],
+		"description": "wx-pageTemplate-ES6"
+	}
+	
+}
