@@ -1,0 +1,55 @@
+.index swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+
+.index swiper image {
+  width: 100%;
+}
+
+.index .menu {
+  display: flex;
+  width: 750rpx;
+}
+
+.index .menu navigator {
+  padding: 20rpx;
+  flex: 1;
+}
+
+.index .menu navigator image {
+  padding: 7rpx;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.index .menu .navigator-hover {
+  background: transparent;
+}
+
+.index .floor {
+  width: 100%;
+}
+
+.index .floor .floor_item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+
+.index .floor .floor_item .item_content {
+  flex-wrap: wrap;
+  padding: 0 10rpx;
+}
+
+.index .floor .floor_item .item_content navigator:not(:first-child) > image {
+  height: 27.72711vw;
+  padding-left: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.index .floor .floor_item .item_content navigator image {
+  width: 33.33%;
+  float: left;
+}

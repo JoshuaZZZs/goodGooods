@@ -18,7 +18,12 @@
     "removeComments": true,
     "pretty": true,
     "strictPropertyInitialization": true,
-    "lib": ["es5"],
+    "lib": ["es5","es2015.promise"],
+   
+    "baseUrl": ".",
+    "paths": {
+      "@vant/weapp/*": ["/miniprogram/miniprogram_npm/@vant/weapp/*"]
+    },
     "typeRoots": [
       "./typings"
     ]

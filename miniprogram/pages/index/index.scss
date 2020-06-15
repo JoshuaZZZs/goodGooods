@@ -1,0 +1,52 @@
+.index {
+    swiper {
+        width: 750rpx;
+        height: 340rpx;
+
+        image {
+            width: 100%;
+        }
+    }
+    .menu {
+        display: flex;
+        width: 750rpx;
+        navigator {
+            padding: 20rpx;
+            flex: 1;
+            image {
+                padding: 7rpx;
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+        .navigator-hover {
+            background: transparent;
+        }
+    }
+    .floor {
+        width: 100%;
+        .floor_item {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            margin-bottom: 10rpx;
+
+            .item_content {
+                flex-wrap: wrap;
+                padding: 0 10rpx;
+                navigator {
+                    &:not(:first-child) > image {
+                        height: 33.33vw * 386/232/2;
+                        padding-left: 10rpx;
+                        padding-bottom: 10rpx;
+                    }
+                    image {
+                        width: 33.33%;
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
+}
