@@ -1,2 +1,26 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="category_page" hover-class="none" hover-stop-propagation="false">
+  <!-- 搜索框 -->
+  <SearchInput />
+  <!-- 左侧导航栏 -->
+  <view class="category">
+    <view class="nav_bar">
+      <van-sidebar active-key="{{ activeIndex }}" bind:change="changeSideBar">
+        <van-sidebar-item wx:for="{{sidebarList}}" wx:key="index" title="{{item.cat_name}}" />
+      </van-sidebar>
+    </view>
+    <!-- 右侧详情 -->
+    <scroll-view class="scroll_container" scroll-top="{{topHeight}}" enable-back-to-top="true" scroll-y="true">
+      <view wx:for="{{containerList}}" wx:key="index" class="category_container">
+        <view class="title">
+          <text>/</text>
+          {{item.cat_name}}
+          <text>/</text>
+        </view>
+        <view class="category_detail" wx:key="index" wx:for-item="detail" wx:for="{{item.children}}">
+          <image class="detail_image" src="{{detail.cat_icon}}" mode="widthFix" />
+          <text class="detail_name">{{detail.cat_name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

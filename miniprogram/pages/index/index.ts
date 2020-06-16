@@ -4,15 +4,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //轮播图数据
     swiperdata: [],
+    //导航栏数据
     navList: [],
+    //楼层图数据
     floorList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options): void {
+  onLoad(): void {
     this.getswiperList()
     this.getNavList()
     this.getFloorList()

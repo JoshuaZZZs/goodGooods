@@ -1,0 +1,44 @@
+.category {
+    display: flex;
+    .nav_bar {
+        flex: 3;
+        max-height: calc(100vh - 90rpx);
+        overflow: auto;
+    }
+    .scroll_container {
+        max-height: calc(100vh - 90rpx);
+        flex: 11;
+        overflow: auto;
+        .category_container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10rpx 0;
+            text {
+                text-align: center;
+            }
+
+            .title {
+                flex-basis: 100%;
+                text-align: center;
+                font-size: 28rpx;
+                padding: 10rpx;
+                color: #ccc;
+            }
+            .category_detail {
+                font-size: 24rpx;
+                padding: 10rpx;
+                width: 33.33%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .detail_name {
+                    font-size: 24rpx;
+                }
+                image {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
