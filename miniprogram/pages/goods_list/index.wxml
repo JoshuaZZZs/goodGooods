@@ -1,2 +1,13 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<view class="goods_list">
+    <SearchInput />
+    <van-tabs sticky active="{{ active }}">
+        <van-tab title="综合">
+        <navigator url=""  wx:for="{{goodsList}}" wx:key="index">
+             <GoodsCard goodsData='{{item}}'/>
+        </navigator>
+        </van-tab>
+        <van-tab title="销量">销量功能暂未开放</van-tab>
+        <van-tab title="价格">价格功能暂未开放</van-tab>
+      
+    </van-tabs>
+</view>

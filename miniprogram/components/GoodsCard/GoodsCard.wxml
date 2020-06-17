@@ -1,0 +1,14 @@
+<!--components/GoodsCard/GoodsCard.wxml-->
+<view class="goods_card">
+    <view class="card_image" hover-class="none" hover-stop-propagation="false">
+        <image src="{{goodsData.goods_small_logo||'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix"/>
+    </view>
+    <view class="card_content">
+        <view class="name" hover-class="none" hover-stop-propagation="false">
+            {{goodsData.goods_name}}
+        </view>
+        <view class="price" hover-class="none" hover-stop-propagation="false">
+            ￥{{goodsData.goods_price}}
+        </view>
+    </view>
+</view>

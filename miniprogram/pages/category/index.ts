@@ -47,6 +47,8 @@ Page({
         this.setData({ sidebarList: res.data.message })
 
         wx.setStorageSync("cats", { time: new Date().getTime(), data: res.data.message })
+      this.getContainerList(0)
+
       }
     })
 
@@ -54,7 +56,7 @@ Page({
   //获取右侧导航栏数据
   getContainerList(activeIndex: number): void {
     if (this.data.sidebarList.length) {
-      debugger
+
       this.setData({ containerList: (this.data.sidebarList[activeIndex] as any).children, topHeight: 0 })
 
     }
@@ -72,7 +74,6 @@ Page({
   onShow(): void {
     if (this.checkBuffer() != false) {
       this.setData({ sidebarList: this.checkBuffer().data })
-      this.getContainerList(0)
     } else {
       this.getSidebarList()
     }

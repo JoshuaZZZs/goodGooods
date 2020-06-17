@@ -16,7 +16,6 @@
             text {
                 text-align: center;
             }
-
             .title {
                 flex-basis: 100%;
                 text-align: center;
@@ -24,19 +23,22 @@
                 padding: 10rpx;
                 color: #ccc;
             }
-            .category_detail {
-                font-size: 24rpx;
-                padding: 10rpx;
+            navigator {
                 width: 33.33%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                .detail_name {
+                .category_detail {
                     font-size: 24rpx;
-                }
-                image {
-                    width: 50%;
+                    padding: 10rpx;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    .detail_name {
+                        font-size: 24rpx;
+                    }
+                    image {
+                        width: 50%;
+                    }
                 }
             }
         }

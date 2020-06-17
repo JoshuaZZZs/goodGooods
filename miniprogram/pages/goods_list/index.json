@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "SearchInput":"../../components/SearchInput/SearchInput",
+    "GoodsCard":"../../components/GoodsCard/GoodsCard",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  },
+  "enablePullDownRefresh":true,
+  "onReachBottomDistance":50
 }

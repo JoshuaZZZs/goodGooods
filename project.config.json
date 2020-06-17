@@ -64,9 +64,10 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "pages/category/index",
-					"pathName": "pages/category/index",
+					"pathName": "pages/goods_list/index",
+					"query": "cid=5&pagenum=1",
 					"scene": null
 				}
 			]

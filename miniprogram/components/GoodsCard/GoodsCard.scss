@@ -1,0 +1,26 @@
+.goods_card{
+    display: flex;
+    width: 100%;
+    padding: 16rpx;
+    .card_image{
+        width: 30%;
+        flex:2;
+      image{
+          width: 80%;
+          margin-right: 10rpx;
+      }
+    }
+    .card_content{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex:5 ;
+        justify-content: space-between;
+        .name{
+            font-size: 24rpx;
+        }
+        .price{
+            color:var(--themColor);
+        }
+    }
+}

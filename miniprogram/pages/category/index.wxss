@@ -32,20 +32,24 @@
   color: #ccc;
 }
 
-.category .scroll_container .category_container .category_detail {
+.category .scroll_container .category_container navigator {
+  width: 33.33%;
+}
+
+.category .scroll_container .category_container navigator .category_detail {
   font-size: 24rpx;
   padding: 10rpx;
-  width: 33.33%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.category .scroll_container .category_container .category_detail .detail_name {
+.category .scroll_container .category_container navigator .category_detail .detail_name {
   font-size: 24rpx;
 }
 
-.category .scroll_container .category_container .category_detail image {
+.category .scroll_container .category_container navigator .category_detail image {
   width: 50%;
 }

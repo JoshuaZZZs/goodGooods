@@ -16,10 +16,12 @@
           {{item.cat_name}}
           <text>/</text>
         </view>
-        <view class="category_detail" wx:key="index" wx:for-item="detail" wx:for="{{item.children}}">
-          <image class="detail_image" src="{{detail.cat_icon}}" mode="widthFix" />
-          <text class="detail_name">{{detail.cat_name}}</text>
-        </view>
+        <navigator url="/pages/goods_list/index?cid={{detail.cat_id}}" wx:key="index" wx:for-item="detail" wx:for="{{item.children}}">
+          <view class="category_detail">
+            <image class="detail_image" src="{{detail.cat_icon}}" mode="widthFix" />
+            <text class="detail_name">{{detail.cat_name}}</text>
+          </view>
+        </navigator>
       </view>
     </scroll-view>
   </view>
