@@ -1,1 +1,100 @@
-/* pages/goods_detail/index.wxss */
+page {
+  background: #ccc;
+}
+
+.goods_detail {
+  width: 100%;
+  background: #fff;
+}
+
+.goods_detail .goods_pic swiper {
+  height: 50vw;
+  text-align: center;
+}
+
+.goods_detail .goods_pic swiper swiper-item image {
+  width: 50%;
+}
+
+.goods_detail .goods_desc {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20rpx;
+  padding: 10rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1;
+  padding-bottom: 15rpx;
+  overflow: hidden;
+  border-bottom: 3rpx solid #bebaba;
+}
+
+.goods_detail .goods_desc .price {
+  flex-basis: 100%;
+  color: var(--themColor);
+  font-size: var(--bigSize);
+}
+
+.goods_detail .goods_desc .name {
+  padding-right: 10rpx;
+  flex: 13;
+  font-weight: bold;
+}
+
+.goods_detail .goods_desc .collect {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.goods_detail .goods_desc .collect .desc {
+  margin-top: 5rpx;
+  font-size: var(--miniSize);
+}
+
+.goods_detail .goods_Detail .desc {
+  padding: 10rpx;
+  margin: 20rpx;
+  font-style: italic;
+  border-bottom: 3rpx solid var(--themColor);
+  color: var(--themColor);
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.goods_detail .goods_Detail .finish {
+  height: 100rpx;
+  background-color: #fff;
+}
+
+.goods_detail .goods_handler {
+  position: fixed;
+  z-index: 2;
+  height: 100rpx;
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.goods_detail .icon_group {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.goods_detail .button_group {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goods_detail .button_group button {
+  width: 100%;
+}

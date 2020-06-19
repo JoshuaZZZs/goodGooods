@@ -7,8 +7,18 @@ page, view, text, swiper, swiper-item, image, navigator {
 page {
   --themColor: #eb4450;
   font-size: 28rpx;
+  --miniSize: 20rpx;
+  --smallSize: 24rpx;
+  --middleSize: 28rpx;
+  --bigSize: 36rpx;
 }
 
 image {
   width: 100%;
+}
+
+.text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

@@ -1,0 +1,96 @@
+page {
+    background: #ccc;
+}
+.goods_detail {
+    width: 100%;
+    background: #fff;
+    .goods_pic {
+        swiper {
+            height: 50vw;
+            text-align: center;
+            swiper-item {
+                image {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    .goods_desc {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20rpx;
+        padding: 10rpx;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1;
+        padding-bottom: 15rpx;
+        overflow: hidden;
+        border-bottom: 3rpx solid rgb(190, 186, 186);
+        .price {
+            flex-basis: 100%;
+            color: var(--themColor);
+
+            font-size: var(--bigSize);
+        }
+        .name {
+            // font-size: var(--smallSize);
+            padding-right: 10rpx;
+            flex: 13;
+            font-weight: bold;
+        }
+        .collect {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .desc {
+                margin-top: 5rpx;
+                font-size: var(--miniSize);
+            }
+        }
+    }
+    .goods_Detail {
+        .desc {
+            padding: 10rpx;
+            margin: 20rpx;
+            font-style: italic;
+            border-bottom: 3rpx solid var(--themColor);
+            color: var(--themColor);
+            font-size: 34rpx;
+            font-weight: bold;
+        }
+        .finish{
+            height: 100rpx;
+            background-color: #fff;
+        }
+    }
+    .goods_handler {
+        position: fixed;
+        z-index: 2;
+        height: 100rpx;
+
+        width: 750rpx;
+        display: flex;
+        align-items: center;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    .icon_group {
+        flex: 1;
+        display: flex;
+        justify-content: space-around;
+    }
+    .button_group {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+            width: 100%;
+        }
+    }
+}

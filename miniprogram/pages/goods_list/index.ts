@@ -32,7 +32,8 @@ Page({
         if (Math.ceil(res.data.message.total / this.data.params.pagesize) > this.data.params.pagenum) {
           this.data.params.pagenum += 1
         } else {
-          this.data.hasMore = false
+          this.setData({hasMore:false})
+         
         }
       }
     })

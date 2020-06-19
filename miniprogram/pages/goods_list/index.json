@@ -3,7 +3,8 @@
     "SearchInput":"../../components/SearchInput/SearchInput",
     "GoodsCard":"../../components/GoodsCard/GoodsCard",
     "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-loading": "@vant/weapp/loading/index"
   },
   "enablePullDownRefresh":true,
   "onReachBottomDistance":50

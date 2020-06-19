@@ -1,2 +1,6 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="cart_page">
+   
+    <view class="get_setting">
+        <van-button  wx:if="{{condition}}"  plain round  color="#7232dd" bind:click="getAdress" icon="plus">选择收货地址</van-button>
+    </view>
+</view>

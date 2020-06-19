@@ -8,7 +8,17 @@ page{
     --themColor:#eb4450;
     // 字体
     font-size:28rpx;
+    --miniSize:20rpx;
+    --smallSize:24rpx;
+    --middleSize:28rpx;
+    --bigSize:36rpx;
 }
 image{
     width: 100%;
+}
+// 文字隐藏样式
+.text-overflow{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }

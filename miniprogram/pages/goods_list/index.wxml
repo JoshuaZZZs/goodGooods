@@ -2,7 +2,7 @@
     <SearchInput />
     <van-tabs sticky active="{{ active }}">
         <van-tab title="综合">
-        <navigator url=""  wx:for="{{goodsList}}" wx:key="index">
+        <navigator url="/pages/goods_detail/index?id={{item.cat_id}}"  wx:for="{{goodsList}}" wx:key="index">
              <GoodsCard goodsData='{{item}}'/>
         </navigator>
         </van-tab>
@@ -10,4 +10,8 @@
         <van-tab title="价格">价格功能暂未开放</van-tab>
       
     </van-tabs>
+     <view class="loading">
+      <van-loading wx:if="{{hasMore}}" color="red"/>
+       <text wx:elif="{{!hasMore&&!isLoading}}}" class="no_more" wx:el>=w=没有啦~</text>
+    </view>
 </view>

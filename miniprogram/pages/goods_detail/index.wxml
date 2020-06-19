@@ -1,2 +1,36 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view class="goods_detail">
+    <view class="goods_pic">
+        <swiper indicator-dots="true" autoplay="true">
+            <swiper-item wx:for="{{goodsDetailData.pics}}" wx:key="index">
+                <image src="{{item.pics_sma_url}}" bindtap="checkDetail" mode="widthFix" data-cur="{{item}}" lazy-load="true" />
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="goods_desc">
+        <view class="price">￥{{goodsDetailData.goods_price}}</view>
+        <view class="name">{{goodsDetailData.goods_name}}</view>
+        <view class="collect">
+            <van-icon name="{{isCollected?'star':'star-o'}}" color="{{isCollected?'red':''}}" bindtap="changeCollected" />
+            <text class="desc">收藏</text>
+        </view>
+    </view>
+    <view class="goods_Detail">
+        <view class="desc">商品详情</view>
+        <rich-text class="goods_introduce" nodes="{{goods_introduce}}"></rich-text>
+        <view class="finish"></view>
+    </view>
+    <view class="goods_handler">
+        <van-goods-action>
+            <view class="icon_group">
+                <van-goods-action-icon icon="chat-o" text="客服" dot />
+                <van-goods-action-icon icon="cart-o" text="购物车" link-type="switchTab"  url='/pages/cart/index' info="{{carts.length?carts.length:''}}" />
+                <van-goods-action-icon icon="shop-o" text="店铺" />
+            </view>
+            <view class="button_group">
+                <van-goods-action-button text="加入购物车"  bind:click="addToCarts" type="warning" />
+                <van-goods-action-button text="立即购买" />
+            </view>
+        </van-goods-action>
+    </view>
+   
+</view>
