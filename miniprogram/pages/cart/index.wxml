@@ -1,6 +1,23 @@
 <view class="cart_page">
-   
     <view class="get_setting">
-        <van-button  wx:if="{{condition}}"  plain round  color="#7232dd" bind:click="getAdress" icon="plus">选择收货地址</van-button>
+        <van-button wx:if="{{!condition}}" plain round color="#7232dd" bind:click="getAdress" icon="plus">
+            选择收货地址
+        </van-button>
+        <view wx:else class="user_address">
+            <icon name="location-o" size="18" />
+            <text>{{condition}}</text>
+        </view>
+    </view>
+    <view class="goods_list">
+        <van-checkbox-group value="{{ result }}" bind:change="onChange">
+            <van-checkbox checked-color="#eb4450" icon-size="38rpx" custom-class="checkbox" name="{{index}}" wx:for="{{cart}}" wx:key="index">
+                <CartItem cartItemData="{{item}}" bind:handleSelect="handleSelect" />
+            </van-checkbox>
+        </van-checkbox-group>
+    </view>
+    <view class="submit">
+        <van-submit-bar price="{{ 3050 }}" button-text="提交订单" bind:submit="onClickButton" tip="{{ true }}">
+            <van-tag type="primary">标签</van-tag>
+        </van-submit-bar>
     </view>
 </view>

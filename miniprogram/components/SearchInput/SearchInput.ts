@@ -1,64 +1,32 @@
-Page({
-/**
- * 页面的初始数据
- */
-data: {
-  
-},
+//Component Object
+Component({
+  properties: {
+    myProperty: {
+      type: String,
+      value: '',
+      observer: function () { }
+    },
 
-/**
- * 生命周期函数--监听页面加载
- */
-/**onLoad(options):void {
-  
-},*/
+  },
+  data: {
 
-/**
- * 生命周期函数--监听页面初次渲染完成
- */
-onReady():void {
-  
-},
+  },
+  methods: {
 
-/**
- * 生命周期函数--监听页面显示
- */
-onShow():void {
-  
-},
+  },
+  created: function () {
 
-/**
- * 生命周期函数--监听页面隐藏
- */
-onHide():void {
-  
-},
+  },
+  attached: function () {
 
-/**
- * 生命周期函数--监听页面卸载
- */
-onUnload():void {
-  
-},
+  },
+  ready: function () {
 
-/**
- * 页面相关事件处理函数--监听用户下拉动作
- */
-onPullDownRefresh():void {
-  
-},
+  },
+  moved: function () {
 
-/**
- * 页面上拉触底事件的处理函数
- */
-onReachBottom():void {
-  
-},
+  },
+  detached: function () {
 
-/**
- * 用户点击右上角分享
- */
-onShareAppMessage():Object {
-  return {}  
-}
-})
+  },
+});

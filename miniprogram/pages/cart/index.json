@@ -1,5 +1,9 @@
 {
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "CartItem": "../../components/CartItem/CartItem",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
   }
 }

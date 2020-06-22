@@ -1,0 +1,11 @@
+<van-swipe-cell custom-class="cart_item" right-width="{{ 140 }}" class="">
+    <van-card custom-class="card" price="{{itemData.goodsDetail.goods_price}}" title="{{itemData.goodsDetail.goods_name}}" thumb="{{itemData.goodsDetail.goods_small_logo }}">
+        <view slot="num" class="num">
+            <van-stepper value="{{ itemData.number }}" min="1" max="{{itemData.goodsDetail.goods_number||10000}}" />
+        </view>
+    </van-card>
+    <view slot="right" class="right">
+        <view class="van-swipe-cell__left" bindtap="moveToCollect">移至收藏</view>
+        <view class="van-swipe-cell__left" bindtap="delete">删除</view>
+    </view>
+</van-swipe-cell>

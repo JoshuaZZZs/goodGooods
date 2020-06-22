@@ -3,3 +3,20 @@
   padding: 10rpx 0;
   text-align: center;
 }
+
+.cart_page .get_setting .user_address {
+  padding: 10rpx;
+  margin: 10rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #c9c9c9;
+}
+
+.cart_page .get_setting .user_address :first-child {
+  margin-right: 6rpx;
+}
+
+.cart_page .checkbox {
+  display: flex;
+  padding-left: 20rpx;
+}

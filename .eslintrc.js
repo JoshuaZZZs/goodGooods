@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint"],
     "parserOptions": {
@@ -17,6 +17,7 @@ module.exports={
         "es6": true,
         "jquery": true
     },
+
     "rules": {
         'eqeqeq': [
             'error',
@@ -25,24 +26,20 @@ module.exports={
                 null: 'ignore'
             }
         ],
-        "globals": {
-            "Page":true,
-            "App":true
-        },
-        'no-empty-function':[
-            "error",{
-                 "allow": [
-                 "functions",
-                 "arrowFunctions" ,
-                 "generatorFunctions" ,
-                 "methods" ,
-                 "generatorMethods" ,
-                 "getters",
-                 "setters" ,
-                 "constructors" ]
-                }
-        ]
-      
 
- }
+        'no-empty-function': [
+            "off", {
+                "allow": [
+                    "functions",
+                    "arrowFunctions",
+                    "generatorFunctions",
+                    "methods",
+                    "generatorMethods",
+
+                ]
+            }
+        ]
+
+
+    }
 }

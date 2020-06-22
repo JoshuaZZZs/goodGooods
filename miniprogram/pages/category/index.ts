@@ -31,7 +31,7 @@ Page({
     this.getContainerList((event as any).detail)
   },
   //因接口数据量大 返回时间长故使用本地缓存
-  checkBuffer(): Boolean | catsBuffer | any {
+  checkBuffer(): boolean | catsBuffer | any {
     const time: number = new Date().getTime()
     const cats: catsBuffer = wx.getStorageSync('cats')
     if (Object.keys(cats).length && time - cats.time <= this.data.bufferTime * 1000) {
@@ -43,11 +43,11 @@ Page({
   //获取页面数据
   getSidebarList() {
     getApp().request('/categories').then((res: any) => {
-      if (res.statusCode == 200) {
+      if (res.statusCode === 200) {
         this.setData({ sidebarList: res.data.message })
 
         wx.setStorageSync("cats", { time: new Date().getTime(), data: res.data.message })
-      this.getContainerList(0)
+        this.getContainerList(0)
 
       }
     })
@@ -72,7 +72,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow(): void {
-    if (this.checkBuffer() != false) {
+    if (this.checkBuffer() !== false) {
       this.setData({ sidebarList: this.checkBuffer().data })
     } else {
       this.getSidebarList()

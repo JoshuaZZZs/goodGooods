@@ -1,0 +1,43 @@
+.card {
+  background: #ffffff;
+}
+
+.card .num {
+  display: inline-block;
+}
+
+.card .van-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.van-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  text-align: center;
+  height: 100%;
+  width: 260rpx;
+}
+
+.right > view {
+  padding: 10rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.right :first-child {
+  background: #ffb529;
+}
+
+.right :last-child {
+  background: var(--themColor);
+}

@@ -1,10 +1,9 @@
-  export default class wxSetting {
+export default class wxSetting {
     protected reject: any = (msg: any) => {
         return console.error(msg)
     }
-    constructor() {
-        
-    }
+
+
     //获取设置
     public getSetting(): any {
         return new Promise((resolve, reject = this.reject) => {

@@ -1,7 +1,21 @@
-.cart_page{
-    .get_setting{
+.cart_page {
+    .get_setting {
         width: 100%;
         padding: 10rpx 0;
         text-align: center;
+        .user_address {
+            padding: 10rpx;
+            margin: 10rpx;
+            display: flex;
+            align-items: center;
+            border-bottom: 1rpx solid #c9c9c9;
+            :first-child {
+                margin-right: 6rpx;
+            }
+        }
+    }
+    .checkbox {
+        display: flex;
+        padding-left: 20rpx;
     }
 }
