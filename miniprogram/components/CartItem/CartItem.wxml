@@ -1,7 +1,11 @@
 <van-swipe-cell custom-class="cart_item" right-width="{{ 140 }}" class="">
-    <van-card custom-class="card" price="{{itemData.goodsDetail.goods_price}}" title="{{itemData.goodsDetail.goods_name}}" thumb="{{itemData.goodsDetail.goods_small_logo }}">
+    <van-card custom-class="card" title="{{cartItemData.goodsDetail.goods_name}}" thumb="{{cartItemData.goodsDetail.goods_small_logo }}">
         <view slot="num" class="num">
-            <van-stepper value="{{ itemData.number }}" min="1" max="{{itemData.goodsDetail.goods_number||10000}}" />
+            <view class="price">
+                <text>￥</text>
+                <text>{{cartItemData.goodsDetail.goods_price}}</text>
+            </view>
+            <van-stepper integer="{{true}}" input-width="80rpx" button-size="40rpx" long-press="{{ false }}" bind:change="changeGoodsItem" plus-class="puls" minus-class="minus" value="{{ itemData.number }}" min="1" max="{{itemData.goodsDetail.goods_number||10000}}" />
         </view>
     </van-card>
     <view slot="right" class="right">

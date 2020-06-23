@@ -1,19 +1,32 @@
 .card {
     background: #ffffff;
     .num {
-        display: inline-block;
-    }
-    .van-card__bottom {
+        width: 100%;
+
         display: flex;
         justify-content: space-between;
-        align-items: center;
+
+        .price {
+            color: var(--themColor);
+            font-size: var(--smallSize);
+            display: flex;
+            align-items: center;
+        }
+        text:last-of-type {
+            font-size: var(--bigSize);
+        }
     }
 }
-.van-card__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.puls {
+    background: transparent;
 }
+.minus {
+    background: transparent;
+}
+.stepper {
+    background: #ffffff;
+}
+
 .right {
     display: flex;
     text-align: center;

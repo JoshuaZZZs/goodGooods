@@ -1,17 +1,87 @@
 import wxSetting from '../../utils/wxSettings'
+type selectedGoods = {
+  total: number,
+  price: number,
+  detail: Array<goodsItem>
+}
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    //收货地址
     condition: '',
+    //购物车中的数据
     cart: wx.getStorageSync("carts"),
-    result: []
+    //所有选中的商品数据
+    result: <Array<string>>[],
+    //是否全选
+    isSelectAll: false,
+    selectedGoods: <selectedGoods>{}
   },
-  onChange(event: any) {
+  selectAllOrNull() {
+    this.setData({
+      isSelectAll: !this.data.isSelectAll
+    })
+    const all: string[] = []
+    if (this.data.isSelectAll) {
+
+      this.data.cart.forEach((element: goodsItem) => {
+        all.push(String(element.goods_id))
+      })
+      this.setData({ result: all })
+    } else {
+      this.setData({ result: [] })
+    }
+    this.changeSubmit()
+
+  },
+
+  //接收数量变化
+  changeNum(e: { detail: goodsItem }) {
+    const index: number = this.data.cart.findIndex((item: goodsItem) => { return item.goods_id === e.detail.goods_id })
+    if (index !== -1) {
+      this.data.cart[index].number = e.detail.number
+      wx.setStorageSync("carts", this.data.cart)
+    }
+
+    if (this.data.result.some(item => { return e.detail.goods_id.toString() === item })) {
+      this.changeSubmit()
+    }
+
+  },
+  //当选中值内容改变时触发
+  selectChange(event: { detail: Array<string> }) {
+
     this.setData({
       result: event.detail,
-    });
+    })
+    if (this.data.result.length === this.data.cart.length) {
+      this.setData({ isSelectAll: true })
+    } else {
+      this.setData({ isSelectAll: false })
+    }
+    this.changeSubmit()
+
+  },
+  changeSubmit() {
+    const selectedGoods = {
+      total: 0,
+      price: 0,
+      detail: <Array<goodsItem>>[]
+    }
+    for (const item of this.data.result) {
+      const index: number = this.data.cart.findIndex((goods: goodsItem) => { return Number(goods.goods_id) === Number(item) })
+      if (index !== -1) {
+        selectedGoods.detail.push(this.data.cart[index])
+      }
+    }
+
+    selectedGoods.detail.forEach((item: goodsItem) => {
+      selectedGoods.total += item.number
+      selectedGoods.price += item.number * item.goodsDetail.goods_price
+    })
+    this.setData({ selectedGoods })
   },
   //获取用户收货地址
   async getAdress() {
@@ -36,6 +106,9 @@ Page({
       console.error(error)
     }
 
+  },
+  onShow() {
+    this.setData({ cart: wx.getStorageSync("carts") })
   },
   /**
    * 生命周期函数--监听页面加载

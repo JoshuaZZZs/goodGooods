@@ -3,19 +3,32 @@
 }
 
 .card .num {
-  display: inline-block;
-}
-
-.card .van-card__bottom {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.card .num .price {
+  color: var(--themColor);
+  font-size: var(--smallSize);
+  display: flex;
   align-items: center;
 }
 
-.van-card__bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card .num text:last-of-type {
+  font-size: var(--bigSize);
+}
+
+.puls {
+  background: transparent;
+}
+
+.minus {
+  background: transparent;
+}
+
+.stepper {
+  background: #ffffff;
 }
 
 .right {

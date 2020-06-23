@@ -1,16 +1,16 @@
-interface goodsItem {
+type goodsItem = {
   number: number,
-  goodsDetail: any
+  goodsDetail: any,
+  goods_id: number,
+  [propName: string]: any
 }
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    caiId: '',
-    goodsDetailData: {
-
-    },
+    caiId: <string>'',
+    goodsDetailData: <goodsItem>{},
     isCollected: false,
     goods_introduce: '',
     carts: wx.getStorageSync('carts') || []
@@ -25,16 +25,17 @@ Page({
   },
   addToCarts() {
 
-    let carts = this.data.carts
+    const carts = this.data.carts
 
-    let index: number = carts.findIndex((item: goodsItem) => {
+    const index: number = carts.findIndex((item: goodsItem) => {
 
       return item.goodsDetail.goods_id === (this.data.goodsDetailData as any).goods_id
     })
-    if (index == -1) {
+    if (index === -1) {
 
-      let goodsIitem: goodsItem = {
+      const goodsIitem: goodsItem = {
         number: 1,
+        goods_id: this.data.goodsDetailData.goods_id,
         goodsDetail: this.data.goodsDetailData
       }
 
@@ -64,8 +65,8 @@ Page({
   },
   //点击图片时全局查看
   checkDetail(e: any): void {
-    let imagesURL: Array<string> = []
-    for (const items of (this.data.goodsDetailData as any).pics) {
+    const imagesURL: Array<string> = []
+    for (const items of this.data.goodsDetailData.pics) {
       imagesURL.push(items.pics_big_url)
     }
     wx.previewImage({
@@ -75,7 +76,7 @@ Page({
   },
   //获取商品详情
   getGoodDetail(): void {
-    let params: Object = {
+    const params = {
       goods_id: this.data.caiId
     }
     getApp().request('/goods/detail', params).then((res: any) => {
@@ -85,53 +86,6 @@ Page({
 
       this.setData({ goods_introduce: (this.data.goodsDetailData as any).goods_introduce.replace(/\.webp/g, '.jpg') })
     })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady(): void {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow(): void {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide(): void {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload(): void {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh(): void {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom(): void {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage(): Object {
-    return {}
   }
+
 })
