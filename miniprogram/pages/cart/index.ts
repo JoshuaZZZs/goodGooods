@@ -64,6 +64,17 @@ Page({
     this.changeSubmit()
 
   },
+  //用户对商品进行收藏或删除操作
+  handleGoods(e: AnyObject) {
+    if (e.detail.type === 'collect') {
+      console.log('collect')
+    } else {
+
+      this.data.cart.slice(this.data.cart.findIndex((item: goodsItem) => { return item.goods_id === e.detail.detail.goods_id }), 1)
+      wx.showToast({ title: '删除成功' })
+    }
+    this.setData({ cart: this.data.cart })
+  },
   changeSubmit() {
     const selectedGoods = {
       total: 0,

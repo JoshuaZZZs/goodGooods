@@ -20,3 +20,7 @@
   display: flex;
   padding-left: 20rpx;
 }
+
+.cart_page .submit_button {
+  font-size: var(--smallSize);
+}

@@ -1,11 +1,11 @@
 export default class wxSetting {
-    protected reject: any = (msg: any) => {
+    protected reject: AnyFunction = (msg: AnyObject) => {
         return console.error(msg)
     }
 
 
     //获取设置
-    public getSetting(): any {
+    public getSetting(): Promise<AnyObject> {
         return new Promise((resolve, reject = this.reject) => {
             wx.getSetting({
                 success: (result) => {
@@ -17,7 +17,7 @@ export default class wxSetting {
         })
     }
     //打开设置
-    public openSetting(): any {
+    public openSetting(): Promise<AnyObject> {
         return new Promise((resolve, reject = this.reject) => {
             wx.openSetting({
                 success: (result) => {
@@ -28,7 +28,7 @@ export default class wxSetting {
         })
     }
     //获取地址
-    public getAddress(): any {
+    public getAddress(): Promise<AnyObject> {
         return new Promise((resolve, reject = this.reject) => {
             wx.chooseAddress({
                 success: (result) => {
@@ -39,7 +39,7 @@ export default class wxSetting {
         })
     }
     //选中地址状态
-    public chooseAddress(): any {
+    public chooseAddress(): Promise<AnyObject> {
         return new Promise((resolve, reject = this.reject) => {
             wx.chooseAddress({
                 success: (result) => {

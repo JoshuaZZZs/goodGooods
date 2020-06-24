@@ -1,4 +1,4 @@
-
+import { util } from './utils/util'
 
 App<IAppOption>({
 
@@ -8,6 +8,7 @@ App<IAppOption>({
    */
   onLaunch(): void {
 
+    wx.util = require('./utils/util')
   },
 
   /**
@@ -20,9 +21,10 @@ App<IAppOption>({
   /**
    * 当小程序从前台进入后台，会触发 onHide
    */
-  onHide(): void {
+  // onHide(): void {
 
-  },
+  // },
   //全局挂载封装的request方法
-  request: require('./request/reuqest')
+  request: require('./request/reuqest'),
+
 })
