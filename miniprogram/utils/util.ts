@@ -26,7 +26,8 @@ const util: AnyObject = {
         ...config,
         success: (res) => {
           resolve(res)
-        }
+        },
+        fail: reject
       })
     })
 

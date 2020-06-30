@@ -16,7 +16,7 @@
         </van-checkbox-group>
     </view>
     <view class="submit">
-        <van-submit-bar button-class="submit_button" price="{{ selectedGoods.price*100||0.00 }}" button-text="去结算{{selectedGoods.total>0?selectedGoods.total<=99?'('+selectedGoods.total+')':'(99+)':''}}" bind:submit="onClickButton" tip="{{ true }}">
+        <van-submit-bar button-class="submit_button" price="{{ selectedGoods.price*100||0.00 }}" disabled="{{selectedGoods.total>0?false:true}}" button-text="去结算{{selectedGoods.total>0?selectedGoods.total<=99?'('+selectedGoods.total+')':'(99+)':''}}" bind:submit="submitCart" tip="{{ true }}">
             <van-checkbox checked-color="#eb4450" icon-size="38rpx" bind:change="selectAllOrNull" value="{{ isSelectAll }}" custom-class="checkbox" name="all">
                 全选
             </van-checkbox>

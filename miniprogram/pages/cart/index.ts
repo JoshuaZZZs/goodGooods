@@ -1,9 +1,9 @@
-import wxSetting from '../../utils/wxSettings'
 type selectedGoods = {
   total: number,
   price: number,
   detail: Array<goodsItem>
 }
+import wxSetting from '../../utils/wxSettings'
 Page({
   /**
    * 页面的初始数据
@@ -12,13 +12,22 @@ Page({
     //收货地址
     condition: '',
     //购物车中的数据
-    cart: wx.getStorageSync("carts"),
+    cart: wx.getStorageSync("cart"),
     //所有选中的商品数据
     result: <Array<string>>[],
     //是否全选
     isSelectAll: false,
     selectedGoods: <selectedGoods>{}
   },
+  //提交订单
+  submitCart() {
+
+    wx.setStorageSync("selectedGoods", this.data.selectedGoods)
+    wx.navigateTo({
+      url: "/pages/pay/index"
+    })
+  },
+  //手动切换是否全选
   selectAllOrNull() {
     this.setData({
       isSelectAll: !this.data.isSelectAll
@@ -42,7 +51,7 @@ Page({
     const index: number = this.data.cart.findIndex((item: goodsItem) => { return item.goods_id === e.detail.goods_id })
     if (index !== -1) {
       this.data.cart[index].number = e.detail.number
-      wx.setStorageSync("carts", this.data.cart)
+      wx.setStorageSync("cart", this.data.cart)
     }
 
     if (this.data.result.some(item => { return e.detail.goods_id.toString() === item })) {
@@ -69,11 +78,11 @@ Page({
     if (e.detail.type === 'collect') {
       console.log('collect')
     } else {
-
-      this.data.cart.slice(this.data.cart.findIndex((item: goodsItem) => { return item.goods_id === e.detail.detail.goods_id }), 1)
+      this.data.cart.splice(this.data.cart.findIndex((item: goodsItem) => { return item.goods_id === e.detail.detail.goods_id }), 1)
       wx.showToast({ title: '删除成功' })
     }
     this.setData({ cart: this.data.cart })
+    wx.setStorageSync("cart", this.data.cart);
   },
   changeSubmit() {
     const selectedGoods = {
@@ -93,6 +102,7 @@ Page({
       selectedGoods.price += item.number * item.goodsDetail.goods_price
     })
     this.setData({ selectedGoods })
+
   },
   //获取用户收货地址
   async getAdress() {
@@ -119,7 +129,8 @@ Page({
 
   },
   onShow() {
-    this.setData({ cart: wx.getStorageSync("carts") })
+    this.setData({ cart: wx.getStorageSync("cart") })
+    this.changeSubmit()
   },
   /**
    * 生命周期函数--监听页面加载

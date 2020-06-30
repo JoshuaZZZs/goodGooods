@@ -13,7 +13,7 @@ Page({
     goodsDetailData: <goodsItem>{},
     isCollected: false,
     goods_introduce: '',
-    carts: wx.getStorageSync('carts') || []
+    carts: wx.getStorageSync('cart')
   },
 
   /**
@@ -23,14 +23,19 @@ Page({
     this.data.caiId = options.id || ''
     this.getGoodDetail()
   },
+  /**
+   * 页面显示
+   */
+  onShow() {
+    this.setData({ carts: wx.getStorageSync("cart") })
+  },
   addToCarts() {
-
-    const carts = this.data.carts
-
+    const carts = this.data.carts === '' ? [] : this.data.carts
     const index: number = carts.findIndex((item: goodsItem) => {
 
       return item.goodsDetail.goods_id === (this.data.goodsDetailData as any).goods_id
     })
+
     if (index === -1) {
 
       const goodsIitem: goodsItem = {
@@ -43,8 +48,8 @@ Page({
     } else {
       carts[index].number++
     }
-    wx.setStorageSync('carts', carts)
-    this.setData({ carts: wx.getStorageSync('carts') })
+    wx.setStorageSync('cart', carts)
+    this.setData({ carts: wx.getStorageSync('cart') })
     wx.showToast({
       title: '添加成功',
       duration: 1500,

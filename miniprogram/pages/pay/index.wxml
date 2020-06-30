@@ -1,2 +1,22 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<view class="use_info">
+    <view class="user_address">
+        <view class="title">收货信息</view>
+        <view class="content">
+            <view class="user_item">
+                <icon name="user-circle-o" size="18" />
+                <text>{{address.userName}}</text>
+                <text>{{address.telNumber}}</text>
+            </view>
+            <view class="user_item">
+                <icon name="location-o" size="18" />
+                <text>{{address.all}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="goods_list">
+    <block wx:for="{{goodsList.detail}}">
+        <van-card num="{{item.number}}" price="{{item.goodsDetail.goods_price}}" thumb="{{item.goodsDetail.goods_small_logo}}" title="{{item.goodsDetail.goods_name}}" />
+    </block>
+</view>
+<van-submit-bar price="{{ goodsList.price*100 }}" button-text="支付" bind:submit="submit" />
