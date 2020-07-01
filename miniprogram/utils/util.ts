@@ -23,6 +23,7 @@ const util: AnyObject = {
       wx.showModal({
         title: title,
         content: content,
+        confirmColor: "#eb4450",
         ...config,
         success: (res) => {
           resolve(res)

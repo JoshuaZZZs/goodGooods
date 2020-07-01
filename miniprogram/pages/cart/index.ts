@@ -1,6 +1,9 @@
 type selectedGoods = {
+  //商品总数
   total: number,
+  //总体价格
   price: number,
+  //选中的商品详情
   detail: Array<goodsItem>
 }
 import wxSetting from '../../utils/wxSettings'
@@ -17,11 +20,11 @@ Page({
     result: <Array<string>>[],
     //是否全选
     isSelectAll: false,
+    //选中的所有数据
     selectedGoods: <selectedGoods>{}
   },
   //提交订单
   submitCart() {
-
     wx.setStorageSync("selectedGoods", this.data.selectedGoods)
     wx.navigateTo({
       url: "/pages/pay/index"
@@ -34,7 +37,6 @@ Page({
     })
     const all: string[] = []
     if (this.data.isSelectAll) {
-
       this.data.cart.forEach((element: goodsItem) => {
         all.push(String(element.goods_id))
       })
@@ -43,7 +45,6 @@ Page({
       this.setData({ result: [] })
     }
     this.changeSubmit()
-
   },
 
   //接收数量变化
@@ -61,7 +62,6 @@ Page({
   },
   //当选中值内容改变时触发
   selectChange(event: { detail: Array<string> }) {
-
     this.setData({
       result: event.detail,
     })
@@ -84,6 +84,7 @@ Page({
     this.setData({ cart: this.data.cart })
     wx.setStorageSync("cart", this.data.cart);
   },
+  //选中数据内容变化
   changeSubmit() {
     const selectedGoods = {
       total: 0,
@@ -131,6 +132,11 @@ Page({
   onShow() {
     this.setData({ cart: wx.getStorageSync("cart") })
     this.changeSubmit()
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '/pages/login/index'
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

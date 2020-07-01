@@ -2,7 +2,19 @@
 
 App<IAppOption>({
 
-  globalData: {},
+  globalData: {
+    cssSet: {
+      // 主题颜色
+      themColor: "#eb4450",
+      bgColor: " #e8eaec",
+      // 字体
+      fontSize: " 28rpx",
+      miniSize: " 20rpx",
+      smallSize: "24rpx",
+      middleSize: "28rpx",
+      bigSize: "36rpx"
+    }
+  },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */

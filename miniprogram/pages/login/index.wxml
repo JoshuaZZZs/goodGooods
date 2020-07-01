@@ -1,2 +1,12 @@
-<!--pages/login/index.wxml-->
-<text>pages/login/index.wxml</text>
+<view class="login_page">
+    <view class="logo">
+        <van-image round width="6rem" height="6rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+    </view>
+    <view class="desc">您还没有登录哦~</view>
+    <view class="login_button">
+        <van-button round color="RGB(0,175,80)" block custom-class="login_button" open-type="getUserInfo" bind:getuserinfo="getUserInfo">
+            微信一键登录
+            <image class="" src="../../assets/image/login/wechat.png" mode="aspectFit" lazy-load="false"></image>
+        </van-button>
+    </view>
+</view>

@@ -1,2 +1,10 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="user_page">
+    <view class="profile_picture">
+        <van-image custom-class="avatar_image" round width="5rem" height="5rem" src="{{userInfo.avatarUrl || ''}}" />
+        <text class="name" wx:if="{{userInfo}}">{{userInfo.nickName}}</text>
+        <text wx:else class="move_login">登录</text>
+    </view>
+    <view class="content">
+        <view class="order_list"></view>
+    </view>
+</view>

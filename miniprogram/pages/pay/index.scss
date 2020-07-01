@@ -1,1 +1,32 @@
 /* pages/pay/index.wxss */
+.pay_page {
+    background: linear-gradient(to top, var(--bgColor) 95%, var(--themColor) 5%);
+    padding: 10rpx;
+    height: 100%;
+    .use_info {
+        border-radius: 20rpx;
+        background: #fff;
+        padding: 10rpx;
+
+        margin: 0 10rpx 20rpx;
+
+        .user_item {
+            display: flex;
+            align-items: center;
+            > text {
+                margin-left: 5rpx;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+    .goods_list {
+        .card {
+            border-radius: 20rpx;
+            padding: 20rpx;
+            margin: 0 10rpx 20rpx;
+        }
+    }
+}

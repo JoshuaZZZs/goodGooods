@@ -20,7 +20,6 @@ Page({
    */
   onShow(): void {
 
-
     this.setData({ goodsList: wx.getStorageSync("selectedGoods") })
 
   },
@@ -37,7 +36,7 @@ Page({
         wx.showToast({ title: '支付成功', icon: "none" })
 
         const cart = wx.getStorageSync('cart')
-        for (const finishItem of this.data.goodsList.detail) {
+        for (const finishItem of (this.data.goodsList as any).detail) {
           cart.splice(cart.findIndex((item: goodsItem) => {
             item.goods_id === finishItem.goods_id
           }), 1)

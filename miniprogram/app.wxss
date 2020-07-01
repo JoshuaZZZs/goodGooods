@@ -1,11 +1,20 @@
-page, view, text, swiper, swiper-item, image, navigator {
+page,
+view,
+text,
+swiper,
+swiper-item,
+image,
+navigator {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 page {
+  width: 100%;
+  height: 100%;
   --themColor: #eb4450;
+  --bgColor: #e8eaec;
   font-size: 28rpx;
   --miniSize: 20rpx;
   --smallSize: 24rpx;

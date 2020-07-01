@@ -8,12 +8,16 @@
             <text>{{condition}}</text>
         </view>
     </view>
-    <view class="goods_list">
+    <view class="goods_list" wx:if="{{cart.length}}">
         <van-checkbox-group value="{{ result }}" bind:change="selectChange">
             <van-checkbox checked-color="#eb4450" icon-size="38rpx" custom-class="checkbox" name="{{item.goods_id}}" wx:for="{{cart}}" wx:key="index">
                 <CartItem bind:changeNum="changeNum" bind:handleGoods="handleGoods" cartItemData="{{item}}" bind:handleSelect="handleSelect" />
             </van-checkbox>
         </van-checkbox-group>
+    </view>
+    <view wx:else class="empty">
+        <image src="../../assets/image/cart/emptyCart.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+        <text>购物车是空的 去买点什么吧~</text>
     </view>
     <view class="submit">
         <van-submit-bar button-class="submit_button" price="{{ selectedGoods.price*100||0.00 }}" disabled="{{selectedGoods.total>0?false:true}}" button-text="去结算{{selectedGoods.total>0?selectedGoods.total<=99?'('+selectedGoods.total+')':'(99+)':''}}" bind:submit="submitCart" tip="{{ true }}">

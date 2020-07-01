@@ -1,22 +1,50 @@
 .cart_page {
+    background: linear-gradient(to top, #fff 85%, var(--themColor) 15%);
+    padding: 10rpx;
+    height: 100%;
     .get_setting {
         width: 100%;
         padding: 10rpx 0;
         text-align: center;
         .user_address {
-            padding: 10rpx;
+            padding: 10rpx 15rpx;
             margin: 10rpx;
             display: flex;
             align-items: center;
-            border-bottom: 1rpx solid #c9c9c9;
+
+            background: #fff;
+            border-radius: 13rpx;
+
             :first-child {
                 margin-right: 6rpx;
             }
         }
     }
+
     .checkbox {
         display: flex;
         padding-left: 20rpx;
+        background: #fff;
+        margin: 10rpx;
+        padding: 10rpx;
+        padding-left: 20rpx;
+        border-radius: 20rpx;
+    }
+    .empty {
+        text-align: center;
+        margin-top: 35%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text {
+            margin-top: 20rpx;
+            color: rgb(161, 161, 161);
+            flex-basis: 100%;
+        }
+        image {
+            margin: 0 auto;
+            width: 35%;
+        }
     }
     .submit_button {
         font-size: var(--smallSize);
