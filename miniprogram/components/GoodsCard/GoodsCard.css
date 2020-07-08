@@ -1,0 +1,46 @@
+.goods_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 16rpx;
+}
+
+.goods_card .card_image {
+  width: 30%;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.goods_card .card_image image {
+  width: 80%;
+  margin-right: 10rpx;
+}
+
+.goods_card .card_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.goods_card .card_content .name {
+  font-size: 24rpx;
+}
+
+.goods_card .card_content .price {
+  color: var(--themColor);
+}
+/*# sourceMappingURL=GoodsCard.css.map */

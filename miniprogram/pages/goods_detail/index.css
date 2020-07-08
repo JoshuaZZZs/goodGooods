@@ -1,0 +1,140 @@
+page {
+  background: #ccc;
+}
+
+.goods_detail {
+  width: 100%;
+  background: #fff;
+}
+
+.goods_detail .goods_pic swiper {
+  height: 50vw;
+  text-align: center;
+}
+
+.goods_detail .goods_pic swiper swiper-item image {
+  width: 50%;
+}
+
+.goods_detail .goods_desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 20rpx;
+  padding: 10rpx;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1;
+  padding-bottom: 15rpx;
+  overflow: hidden;
+  border-bottom: 3rpx solid #bebaba;
+}
+
+.goods_detail .goods_desc .price {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  color: var(--themColor);
+  font-size: var(--bigSize);
+}
+
+.goods_detail .goods_desc .name {
+  padding-right: 10rpx;
+  -webkit-box-flex: 13;
+      -ms-flex: 13;
+          flex: 13;
+  font-weight: bold;
+}
+
+.goods_detail .goods_desc .collect {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.goods_detail .goods_desc .collect .desc {
+  margin-top: 5rpx;
+  font-size: var(--miniSize);
+}
+
+.goods_detail .goods_Detail .desc {
+  padding: 10rpx;
+  margin: 20rpx;
+  font-style: italic;
+  border-bottom: 3rpx solid var(--themColor);
+  color: var(--themColor);
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.goods_detail .goods_Detail .finish {
+  height: 100rpx;
+  background-color: #fff;
+}
+
+.goods_detail .goods_handler {
+  position: fixed;
+  z-index: 2;
+  height: 100rpx;
+  width: 750rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.goods_detail .icon_group {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.goods_detail .button_group {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.goods_detail .button_group button {
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */

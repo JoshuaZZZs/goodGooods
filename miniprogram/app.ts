@@ -1,5 +1,4 @@
 
-
 App<IAppOption>({
 
   globalData: {

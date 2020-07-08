@@ -1,0 +1,33 @@
+page,
+view,
+text,
+swiper,
+swiper-item,
+image,
+navigator {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+page {
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  --miniSize: 20rpx;
+  --smallSize: 24rpx;
+  --middleSize: 28rpx;
+  --bigSize: 36rpx;
+}
+
+image {
+  width: 100%;
+}
+
+.text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*# sourceMappingURL=app.css.map */

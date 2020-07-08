@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: getApp().globalData.userInfo || null,
-    backcss: {
-
+    userInfo: getApp().globalData.userInfo,
+    css: {
+      bg: `background:url(../../assets/image/login/login.jpg) no-repeat `
     }
   },
 
@@ -29,8 +29,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
+
+
+
     this.setData({ userInfo: getApp().globalData.userInfo })
-    this.setData({ backcss: `background-image:url(${getApp().globalData.userInfo.avatarUrl || ''}) no-reapet` })
+
   },
 
   /**
@@ -39,32 +43,23 @@ Page({
   onHide: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  //跳转到登录页面 
+  moveToLogin() {
+    if (!getApp().globalData.userInfo) {
+      wx.navigateTo({
+        url: '/pages/login/index'
+      })
+    }
 
   },
+  //用户点击静态页面提示
+  openTips() {
+    wx.showToast({
+      title: '抱歉，由于时间和接口问题所以该部分功能仅为静态展示',
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    });
   }
+
+
 })

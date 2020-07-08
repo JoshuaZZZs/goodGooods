@@ -1,0 +1,76 @@
+.card {
+  background: #ffffff;
+}
+
+.card .num {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card .num .price {
+  color: var(--themColor);
+  font-size: var(--smallSize);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .num text:last-of-type {
+  font-size: var(--bigSize);
+}
+
+.puls {
+  background: transparent;
+}
+
+.minus {
+  background: transparent;
+}
+
+.stepper {
+  background: #ffffff;
+}
+
+.right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  height: 100%;
+  width: 260rpx;
+}
+
+.right > view {
+  padding: 10rpx;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+}
+
+.right :first-child {
+  background: #ffb529;
+}
+
+.right :last-child {
+  background: var(--themColor);
+}
+/*# sourceMappingURL=CartItem.css.map */
