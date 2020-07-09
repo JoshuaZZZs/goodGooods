@@ -9,7 +9,9 @@ navigator {
     margin: 0;
     box-sizing: border-box;
 }
+
 page {
+    @import "./styles/color.scss";
     width: 100%;
     height: 100%;
     // 主题颜色

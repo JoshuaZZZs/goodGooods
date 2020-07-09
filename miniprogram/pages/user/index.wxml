@@ -30,62 +30,61 @@
             <view class="title">我的订单</view>
             <view class="content">
                 <view class="items">
-                    <icon name="orders-o" size="24" />
+                    <icon custom-class="icon" name="orders-o" size="24" />
                     <view class="desc">全部订单</view>
                 </view>
                 <view class="items">
-                    <icon name="balance-list-o" size="24" />
+                    <icon custom-class="icon" name="balance-list-o" size="24" />
                     <view class="desc">待付款</view>
                 </view>
                 <view class="items">
-                    <icon class="icon" name="todo-list-o" size="24" />
+                    <icon custom-class="icon" name="todo-list-o" size="24" />
                     <view class="desc">待收货</view>
                 </view>
                 <view class="items">
-                    <icon name="failure" size="24" />
+                    <icon custom-class="icon" name="failure" size="24" />
                     <view class="desc">退款/售后</view>
                 </view>
             </view>
         </view>
         <view class="other_menu" bindtap="openTips">
             <view class="items">
-                <icon name="vip-card-o" size="24" />
+                <icon custom-class="icon" name="vip-card-o" size="24" />
                 <view class="desc">会员中心</view>
             </view>
             <view class="items">
-                <icon name="balance-o" size="24" />
+                <icon custom-class="icon" name="balance-o" size="24" />
                 <view class="desc">我的红包</view>
             </view>
             <view class="items">
-                <icon name="fire-o" size="24" />
+                <icon custom-class="icon" name="fire-o" size="24" />
                 <view class="desc">火热推荐</view>
             </view>
             <view class="items">
-                <icon class="icon" name="todo-list-o" size="24" />
+                <icon custom-class="icon" name="todo-list-o" size="24" />
                 <view class="desc">我的快递</view>
             </view>
             <view class="items">
-                <icon name="discount" size="24" />
+                <icon custom-class="icon" name="discount" size="24" />
                 <view class="desc">我的卡券</view>
             </view>
             <view class="items">
-                <icon name="service-o" size="24" />
+                <icon custom-class="icon" name="service-o" size="24" />
                 <view class="desc">我的问答</view>
             </view>
             <view class="items">
-                <icon name="after-sale" size="24" />
-                <view class="desc">闲置换钱</view>
-            </view>
-            <view class="items">
-                <icon name="flower-o" size="24" />
+                <icon custom-class="icon" name="flower-o" size="24" />
                 <view class="desc">猜你喜欢</view>
             </view>
+            <view class="items">
+                <icon custom-class="icon" name="after-sale" size="24" />
+                <view class="desc">闲置换钱</view>
+            </view>
         </view>
-        <view class="user_address">
-            <text>管理我的地址</text>
+        <view class="setting">
+            <view class="help">联系我们</view>
+            <view class="suggestion">意见反馈</view>
+            <view class="config">通用设置</view>
         </view>
-        <view class="help">联系我们</view>
-        <view class="suggestion">意见反馈</view>
-        <view class="config">通用设置</view>
     </view>
 </view>

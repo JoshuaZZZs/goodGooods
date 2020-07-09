@@ -1,7 +1,11 @@
+$colors: var(--violet) var(--gold) var(--orangered) var(--lightskyblue) var(--lightcoral) var(--sandybrown)
+    var(--lightgreen) var(--cornflowerblue);
+
 .user_page {
     height: 100%;
     display: flex;
     flex-direction: column;
+
     .profile_picture {
         flex: 2;
         width: 100%;
@@ -12,6 +16,7 @@
         flex-wrap: warp;
         flex-direction: column;
         overflow: hidden;
+
         .user {
             z-index: 2;
             position: absolute;
@@ -21,37 +26,43 @@
             align-items: center;
             flex-wrap: warp;
             flex-direction: column;
+
             .avatar_image {
                 width: 100%;
                 flex-basis: 100%;
                 margin-bottom: 10rpx;
                 border-radius: 999rpx;
             }
+
             text {
                 color: #fff;
                 text-shadow: 2rpx 2rpx 6rpx #ccc;
             }
         }
+
         .bg_color {
             width: 100%;
             height: 100%;
             filter: blur(10rpx);
         }
     }
+
     .content {
         flex: 3;
         background: var(--bgColor);
         padding: 10rpx 20rpx;
+
         > view {
             margin: 10rpx 0;
             border-radius: 10rpx;
             background: #fff;
         }
+
         .user_tools {
             display: flex;
             position: relative;
-            top: -10%;
-            margin-bottom: -7%;
+            top: -80rpx;
+            margin-bottom: -82rpx;
 
             .items {
                 flex-basis: 25%;
@@ -61,16 +72,20 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+
                 :first-child {
                     margin-bottom: 10rpx;
                 }
+
                 .number {
                     color: var(--themColor);
                 }
+
                 text {
                     flex-basis: 100%;
                     flex-wrap: wrap;
                 }
+
                 // &:not(:last-child)::after {
                 //     content: "";
                 //     width: 2rpx;
@@ -81,11 +96,13 @@
                 // }
             }
         }
+
         .user_order {
             display: flex;
 
             flex-wrap: wrap;
-            margin-bottom: 20rpx;
+            margin-bottom: 1%;
+
             .title {
                 flex-basis: 100%;
                 margin: 5rpx 10rpx;
@@ -93,39 +110,56 @@
                 padding: 10rpx;
                 border-bottom: 1px solid #c9c9c9;
             }
+
             .content {
                 background: #fff;
                 display: flex;
-                padding: 0 10rpx;
+                padding: 0;
                 justify-content: space-between;
                 border-radius: 999rpx;
 
                 .van-icon {
                     color: var(--themColor);
+                    flex-basis: 100%;
+                    text-align: center;
                 }
+
                 .items {
                     display: flex;
 
                     align-items: center;
                     justify-content: space-between;
 
-                    flex-direction: column;
+                    flex-wrap: wrap;
                     padding: 10rpx;
                     margin: 10rpx;
+                    .icon {
+                        text-align: center;
+                        flex-basis: 100%;
+                        display: flex;
+
+                        align-items: center;
+                        justify-content: center;
+                        width: 137rpx;
+                    }
                     .desc {
+                        text-align: center;
                         flex-basis: 100%;
                         margin-top: 10rpx;
                     }
                 }
             }
         }
+
         .user_address {
             padding: 10rpx 20rpx;
             margin-bottom: 20rpx;
         }
+
         .other_menu {
             display: flex;
             flex-wrap: wrap;
+
             > view {
                 flex-basis: 25%;
                 display: flex;
@@ -134,26 +168,42 @@
                 flex-direction: column;
                 padding: 10rpx 0;
                 margin: 10rpx 0;
+                .icon {
+                    text-align: center;
+                    flex-basis: 100%;
+                    display: flex;
+
+                    align-items: center;
+                    justify-content: center;
+                    width: 126rpx;
+                }
                 .desc {
+                    text-align: center;
                     flex-basis: 100%;
                     margin-top: 10rpx;
                 }
             }
-            // @for $i from 1 to length($iconColor) + 1 {
-            //     &:nth-child(#{$i}) {
-            //         .van-icon {
-            //             color: nth($iconColor, $i);
-            //         }
-            //     }
-            //     .other_menu .view {
-            //         background: nth($iconColor, $i);
-            //     }
-            // }
+
+            :nth-child(1) .van-icon {
+                color: red;
+            }
+
+            @for $i from 1 to length($colors) + 1 {
+                :nth-child(#{$i}) .van-icon {
+                    color: nth($colors, $i);
+                }
+            }
         }
-        .help,
-        .suggestion,
-        .config {
-            padding: 10rpx 20rpx;
+
+        .setting {
+            &:not(:last-child) view {
+                color: red;
+            }
+            .help,
+            .suggestion,
+            .config {
+                padding: 10rpx 20rpx;
+            }
         }
     }
 }

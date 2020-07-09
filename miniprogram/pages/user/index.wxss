@@ -60,8 +60,8 @@
 .user_page .content .user_tools {
   display: flex;
   position: relative;
-  top: -10%;
-  margin-bottom: -7%;
+  top: -80rpx;
+  margin-bottom: -82rpx;
 }
 
 .user_page .content .user_tools .items {
@@ -90,7 +90,7 @@
 .user_page .content .user_order {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20rpx;
+  margin-bottom: 1%;
 }
 
 .user_page .content .user_order .title {
@@ -104,25 +104,37 @@
 .user_page .content .user_order .content {
   background: #fff;
   display: flex;
-  padding: 0 10rpx;
+  padding: 0;
   justify-content: space-between;
   border-radius: 999rpx;
 }
 
 .user_page .content .user_order .content .van-icon {
   color: var(--themColor);
+  flex-basis: 100%;
+  text-align: center;
 }
 
 .user_page .content .user_order .content .items {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: column;
+  flex-wrap: wrap;
   padding: 10rpx;
   margin: 10rpx;
 }
 
+.user_page .content .user_order .content .items .icon {
+  text-align: center;
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 137rpx;
+}
+
 .user_page .content .user_order .content .items .desc {
+  text-align: center;
   flex-basis: 100%;
   margin-top: 10rpx;
 }
@@ -147,13 +159,63 @@
   margin: 10rpx 0;
 }
 
+.user_page .content .other_menu > view .icon {
+  text-align: center;
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 126rpx;
+}
+
 .user_page .content .other_menu > view .desc {
+  text-align: center;
   flex-basis: 100%;
   margin-top: 10rpx;
 }
 
-.user_page .content .help,
-.user_page .content .suggestion,
-.user_page .content .config {
+.user_page .content .other_menu :nth-child(1) .van-icon {
+  color: red;
+}
+
+.user_page .content .other_menu :nth-child(1) .van-icon {
+  color: var(--violet);
+}
+
+.user_page .content .other_menu :nth-child(2) .van-icon {
+  color: var(--gold);
+}
+
+.user_page .content .other_menu :nth-child(3) .van-icon {
+  color: var(--orangered);
+}
+
+.user_page .content .other_menu :nth-child(4) .van-icon {
+  color: var(--lightskyblue);
+}
+
+.user_page .content .other_menu :nth-child(5) .van-icon {
+  color: var(--lightcoral);
+}
+
+.user_page .content .other_menu :nth-child(6) .van-icon {
+  color: var(--sandybrown);
+}
+
+.user_page .content .other_menu :nth-child(7) .van-icon {
+  color: var(--lightgreen);
+}
+
+.user_page .content .other_menu :nth-child(8) .van-icon {
+  color: var(--cornflowerblue);
+}
+
+.user_page .content .setting:not(:last-child) view {
+  color: red;
+}
+
+.user_page .content .setting .help,
+.user_page .content .setting .suggestion,
+.user_page .content .setting .config {
   padding: 10rpx 20rpx;
 }
